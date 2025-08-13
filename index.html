@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jogo da Velha</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+
+    </head>
+
+    <body>
+        <h3 class="txt-game-mode" txt-game-mode>MODE: CLASSIC</h3>
+        <div class="modal-winner disabled" modal-winner>
+            <h1 class="txt-msg-winner" txt-msg-winner>X WIN</h1>
+            <button class="btn btn-play-again" btn-play-again>PLAY AGAIN</button>
+        </div>
+        <div class="scores" scores>
+            <span class="txt-score-span">X: <p score-x>0</p></span>
+            <span class="txt-score-span">DRAW: <p score-draw>0</p></span>
+            <span class="txt-score-span">O: <p score-o>0</p></span>
+        </div>
+        <div class="board" board>
+            <div class="cell" cell></div>
+            <div class="cell" cell></div>
+            <div class="cell" cell></div>
+            <div class="cell" cell></div>
+            <div class="cell" cell></div>
+            <div class="cell" cell></div>
+            <div class="cell" cell></div>
+            <div class="cell" cell></div>
+            <div class="cell" cell></div>
+        </div>
+        <button class="btn btn-change-mode" btn-change-mode>CHANGE MODE</button>
+        <button class="btn btn-restart-game" btn-restart-game>RESTART</button>
+        <script src='index.js'></script>
+    </body>
+
+</html>
