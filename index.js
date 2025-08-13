@@ -73,9 +73,8 @@ function selectCell(cell, index) {
     let turn = getTurn();
     cell.classList.add(turn);
 
+    if (winCheck()) { endGame(); return; }
     if (gameMode === 'infinity') { updateInfinityCells(index) }
-
-    if (winCheck()) { endGame() };
 
     changeTurn();
     updateBoardClass();
@@ -95,6 +94,7 @@ function chameGameMode() {
 
 function disableCells() {
     cells.forEach((cell, index) => {
+        cell.classList.remove('disabled');
         if (!winnerPosition.includes(index)) { cell.classList.add('disabled') }
     });
 }
