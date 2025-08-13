@@ -19,6 +19,7 @@ body {
     width: 100dvw;
     height: 100dvh;
     background-image: linear-gradient(to right, #EEAECA, #94BBE9);
+    position: relative;
 }
 
 .board {
@@ -188,19 +189,19 @@ body {
 }
 
 .btn-change-mode {
-    position: fixed;
+    position: absolute;
     bottom: 20px;
     left: 20px;
 }
 
 .btn-restart-game {
-    position: fixed;
+    position: absolute;
     bottom: 20px;
     right: 20px;
 }
 
 .txt-game-mode {
-    position: fixed;
+    position: absolute;
     bottom: 75px;
     left: 20px;
     color: rgb(59, 13, 143);
@@ -209,7 +210,7 @@ body {
 }
 
 .txt-starting-player {
-    position: fixed;
+    position: absolute;
     top: 50px;
     left: 20px;
     color: rgb(59, 13, 143);
