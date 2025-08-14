@@ -29,6 +29,7 @@ cells.forEach((cell, index) => {
 
 function startGame() {
     isXTurn = Math.round(Math.random()) === 0;
+    choiceToRemove = undefined;
     choicesInfinity = [];
     winnerPosition = [];
     winner = undefined;
@@ -36,6 +37,8 @@ function startGame() {
     board.classList.remove('x', 'o');
     board.classList.add('board', getTurn());
     modalWinnner.classList.add('disabled');
+    console.log(choiceToRemove);
+    console.log(choicesInfinity);
 }
 
 function winCheck() {
