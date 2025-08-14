@@ -129,6 +129,22 @@ body {
     background: none !important;
 }
 
+/* WINNER LINES */
+
+.line-winner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    z-index: 1000;
+    height: 130%;
+    background: rgb(187, 36, 187);
+}
+
+.line-winner.diagonal {
+    height: 150%;
+}
+
 /* SCORES */
 .scores {
     display: flex;
@@ -161,6 +177,7 @@ body {
     height: auto;
     gap: 20px;
     padding: 20px;
+    padding-bottom: 60px;
 }
 
 .modal-winner.disabled {

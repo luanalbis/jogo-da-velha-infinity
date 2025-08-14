@@ -33,7 +33,13 @@ function startGame() {
     choicesInfinity = [];
     winnerPosition = [];
     winner = undefined;
-    cells.forEach(cell => cell.classList = 'cell');
+
+    cells.forEach(cell => {
+        const span = cell.querySelector('span');
+        if (span) cell.querySelector('span').remove();
+        cell.className = 'cell';
+    });
+
     board.classList.remove('x', 'o');
     board.classList.add('board', getTurn());
     modalWinnner.classList.add('disabled');
@@ -95,15 +101,42 @@ function chameGameMode() {
     startGame();
 }
 
-function disableCells() {
+function disableLoseCells() {
+    createWinnerLine();
     cells.forEach((cell, index) => {
         cell.classList.remove('disabled');
+
         if (!winnerPosition.includes(index)) { cell.classList.add('disabled') }
+        else { cell.appendChild(createWinnerLine()) }
     });
 }
 
+function createWinnerLine() {
+    let angle = 0;
+    let lineClass = 'normal';
+    let index = winnerCombinations.findIndex(
+        combination => combination.every((num, index) => num === winnerPosition[index])
+    );
+
+    if (index < 3) { angle = 90 }
+
+    if (index === 6) {
+        angle = -45;
+        lineClass = 'diagonal';
+    } else if (index === 7) {
+        angle = 45;
+        lineClass = 'diagonal';
+    }
+
+    const line = document.createElement('span');
+    line.classList.add('line-winner', lineClass);
+    line.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+    return line;
+}
+
+
 function endGame() {
-    disableCells();
+    disableLoseCells();
     updateScores();
     modalWinnner.classList.remove('disabled');
     if (winner !== 'draw') {
